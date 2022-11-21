@@ -1,3 +1,6 @@
 [submodule "mmdetection"]
 	path = mmdetection
 	url = https://github.com/prithv1/mmdetection.git
+[submodule "PASTA_CSG"]
+	path = PASTA_CSG
+	url = https://github.com/vivekvjk/PASTA_CSG.git
