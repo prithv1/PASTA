@@ -1,8 +1,10 @@
 # <a href="https://arxiv.org/abs/2106.04531">PASTA: Proportional Amplitude Spectrum Augmentation for Synthetic to Real Domain Generalization</a>
 
-#### Prithvijit Chattopadhyay, Kartik Sarangmath, Vivek Vijaykumar, Judy Hoffman
+#### Prithvijit Chattopadhyay*, Kartik Sarangmath*, Vivek Vijaykumar, Judy Hoffman
 
-<img src="media/pasta.pdf" alt="" width="80%">
+(*equal contribution)
+
+<img src="media/pasta.png" alt="" width="100%">
 
  _Synthetic data offers the promise of cheap and bountiful training data for settings where lots of labeled real-world data for some task is unavailable. However, models trained on synthetic data significantly underperform on real-world data. In this paper, we propose Proportional Amplitude Spectrum Training Augmentation (PASTA), a simple and effective augmentation strategy to improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves perturbing the amplitude spectrums of the synthetic images in the Fourier domain to generate augmented views. We design PASTA to perturb the amplitude spectrums in a structured manner such that high-frequency components are perturbed relatively more than the low-frequency ones. For the tasks of semantic segmentation (GTAV→Real), object detection (Sim10K→Real), and object recognition (VisDAC Syn→Real), across a total of 5 syn-to-real shifts, we find that PASTA  either outperforms or is consistently competitive with more complex state-of-the-art methods while being complementary to other generalization approaches._
 
@@ -31,9 +33,8 @@ Follow instructions under the folder [Robustnet](RobustNet) to download datasets
 
 Follow instructions under the folder [mmdetection](mmdetection) install dependencies required to run experiments for object recognition.
 
-Download the <a href="https://fcav.engin.umich.edu/projects/driving-in-the-matrix">Sim10k</a> dataset.
+Download the <a href="https://fcav.engin.umich.edu/projects/driving-in-the-matrix">Sim10k</a> dataset. Once downloaded run the following command to process annotations.
 
-Once downloaded run the following command to process annotations.
 ```
 python dataset_utils/sim10k_voc2coco_format.py \
     --sim10k_path <path-to-sim10k-folder> \
