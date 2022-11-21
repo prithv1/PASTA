@@ -18,7 +18,7 @@
 </ul>
 </div>
 
-## 💻 Installation & 🖼️ Datasets
+## 💻 Setup
 
 We conduct experiments on semantic segmentation, object detection and object recognition and build on top of the following repositories to do so - <a href="https://github.com/shachoi/RobustNet">RobustNet (SemSeg)</a>, <a href="https://github.com/open-mmlab/mmdetection">mmdetection (ObjDet)</a>, <a href="https://github.com/NVlabs/CSG">CSG (ObjRecog)</a>.
 
