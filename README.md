@@ -30,11 +30,11 @@ We conduct experiments on semantic segmentation, object detection and object rec
 
 #### Semantic Segmentation
 
-Follow instructions under the folder [Robustnet](RobustNet) to download datasets and install dependencies required to run experiments for semantic segmentation.
+Follow instructions under [Robustnet](RobustNet) to download datasets and install dependencies required to run experiments for semantic segmentation.
 
 #### Object Detection
 
-Follow instructions under the folder <a href="https://github.com/prithv1/mmdetection">mmdetection</a> install dependencies required to run experiments for object recognition.
+Follow instructions under <a href="https://github.com/prithv1/mmdetection">mmdetection</a> install dependencies required to run experiments for object recognition.
 
 Download the <a href="https://fcav.engin.umich.edu/projects/driving-in-the-matrix">Sim10k</a> dataset. Once downloaded run the following command to process annotations.
 
@@ -49,6 +49,6 @@ python dataset_utils/sim10k_voc2coco_format.py \
 
 #### Object Recognition
 
-Follow instructions under the [CSG](CSG) to download datasets and install dependencies required to run experiments for object recognition.
+Follow instructions under [CSG](CSG) to download datasets and install dependencies required to run experiments for object recognition.
 
 ## 📊 Experiments
