@@ -30,7 +30,7 @@ We conduct experiments on semantic segmentation, object detection and object rec
 
 #### Semantic Segmentation
 
-Follow instructions under [Robustnet](RobustNet) to download datasets and install dependencies required to run experiments for semantic segmentation.
+Follow instructions under <a href="https://github.com/ksarangmath/PASTA_robustnet">RobustNet</a> to download datasets and install dependencies required to run experiments for semantic segmentation.
 
 #### Object Detection
 
@@ -55,7 +55,7 @@ Follow instructions under [CSG](CSG) to download datasets and install dependenci
 
 #### Semantic Segmentation
 
-3. You can run semantic segmentation experiments with PASTA using following commands:
+3. Semantic segmentation experiments with PASTA can be run using following commands:
 ```
 <path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_base_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, Baseline + PASTA
 <path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_ibn_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, IBN-Net + PASTA
