@@ -15,6 +15,7 @@ Prithvijit Chattopadhyay*, Kartik Sarangmath*, Vivek Vijaykumar, Judy Hoffman
 <li><a href="#-pasta">📝 What is PASTA?</a></li>
 <li><a href="#-setup">💻 Setup</a></li>
 <li><a href="#-experiments">📊 Experiments</a></li>
+<li><a href="#-checkpoints">📊 Checkpoints</a></li>
 </ul>
 </div>
 
@@ -46,6 +47,8 @@ We conduct experiments on semantic segmentation, object detection and object rec
 
 Follow instructions under <a href="https://github.com/ksarangmath/PASTA_robustnet">RobustNet</a> to download datasets and install dependencies required to run experiments for semantic segmentation.
 
+Once downloaded, update the path to respective datasets in the [config](https://github.com/ksarangmath/PASTA_robustnet/blob/049c59908c1b10cc504d89d5183eb018d810267d/config.py).
+
 #### Object Detection
 
 <!-- Follow instructions under <a href="https://github.com/prithv1/mmdetection">mmdetection</a> install dependencies required to run experiments for object recognition. -->
@@ -64,12 +67,16 @@ python dataset_utils/sim10k_voc2coco_format.py \
 
 Download the <a href="https://www.cityscapes-dataset.com/downloads/">Cityscapes</a> dataset.
 
+Once processed, update the path to individual datasets in the experiment [configs](https://github.com/prithv1/mmdetection/tree/74f883ef796e1bea3c5ceea41e4bc826486e8d0c/configs/pasta_dg).
+
 
 #### Object Recognition
 
 <!-- Follow instructions under [CSG](CSG) to download datasets and install dependencies required to run experiments for object recognition. -->
 
 Follow <a href="https://github.com/vivekvjk/PASTA_CSG/blob/c7a75d5c63db1a60b28e300457da74bb428073bd/README.md">these instructions</a> to download the VisDA-C dataset.
+
+Once downloaded, update the default path to datasets in the [training script](https://github.com/vivekvjk/PASTA_CSG/blob/c7a75d5c63db1a60b28e300457da74bb428073bd/train.py#L31).
 
 To install required dependencies, follow the steps below:
 1. First download and setup [Anaconda](https://docs.anaconda.com/anaconda/install/linux/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
@@ -87,16 +94,108 @@ pip install requirements.txt
 
 #### Semantic Segmentation
 
-3. Semantic segmentation experiments with PASTA can be run using following commands:
+To run semantic segmentation experiments with PASTA, navigate to [PASTA_robustnet](https://github.com/ksarangmath/PASTA_robustnet) and run the following commands.
+
+1. MobileNetv2 Backbone (trained on 2 GPUs)
 ```
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_base_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, Baseline + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_ibn_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, IBN-Net + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_mobile_gtav_isw_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, ISW + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_base_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, Baseline + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_ibn_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, IBN-Net + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_isw_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, ISW + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_base_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, Baseline + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_ibn_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, IBN-Net + PASTA
-<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_isw_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, ISW + PASTA
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, Baseline + PASTA
+CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_base_PASTA.sh 
+
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, IBN-Net + PASTA
+CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_ibn_PASTA.sh
+
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, ISW + PASTA
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_mobile_gtav_isw_PASTA.sh
+```
+
+2. ResNet-50 Backbone (trained on 4 GPUs)
+```
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, Baseline + PASTA
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_base_PASTA.sh
+
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, IBN-Net + PASTA
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_ibn_PASTA.sh
+
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, ISW + PASTA
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_isw_PASTA.sh
+```
+
+3. ResNet-101 Backbone (trained on 4 GPUs, atleast 24G VRAM)
 
 ```
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, Baseline + PASTA
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_base_PASTA.sh
+
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, IBN-Net + PASTA
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_ibn_PASTA.sh
+
+# Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, ISW + PASTA
+CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_isw_PASTA.sh
+```
+
+All models are trained for 40k iterations. Once trained, obtain syn-to-real generalization performance by:
+1. Finding the best in-domain checkpoint epoch from the experiment directory
+2. Picking results for the corresponding epoch from the training logs
+
+#### Object Detection
+
+To run object detection experiments with PASTA, navigate to [mmdetection](https://github.com/prithv1/mmdetection) and run the following commands.
+
+1. ResNet-50 Backbone (trained on 4 GPUs)
+```
+# Baseline Faster-RCNN
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg.py 4
+
+# Baseline Faster-RCNN (with Photometric Distortion)
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg_pd.py 4
+
+# Baseline Faster-RCNN (with PASTA)
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg_pasta.py 4
+
+# Baseline Faster-RCNN (with PASTA + Photometric Distortion)
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg_pasta_pd.py 4
+```
+
+2. ResNet-101 Backbone (trained on 4 GPUs)
+
+```
+# Baseline Faster-RCNN
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg.py 4
+
+# Baseline Faster-RCNN (with Photometric Distortion)
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg_pd.py 4
+
+# Baseline Faster-RCNN (with PASTA)
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg_pasta.py 4
+
+# Baseline Faster-RCNN (with PASTA + Photometric Distortion)
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg_pasta_pd.py 4
+```
+
+All models are trained for 10k iterations. Once trained, obtain syn-to-real generalization performance at 10k iters from the respective log files.
+
+#### Object Recognition
+
+To run object recognition experiments with PASTA, navigate to [PASTA_CSG](https://github.com/vivekvjk/PASTA_CSG) and run the following commands.
+
+ResNet-101 Backbone
+```
+# Train Baseline
+./scripts/Visda/train.sh
+
+# Train Baseline + PASTA
+./scripts/Visda/train_PASTA.sh
+```
+
+To evaluate trained models, run the following commands.
+```
+# Evaluate Baseline
+./scripts/Visda/eval.sh
+
+# Evaluate Baseline + PASTA
+./scripts/Visda/eval_PASTA.sh
+```
+
+## 📊 Checkpoints
+
+[Coming Soon]
