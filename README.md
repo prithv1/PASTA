@@ -200,3 +200,9 @@ To evaluate trained models, run the following commands.
 ## 📊 Checkpoints
 
 [Coming Soon]
+
+## Contributors
+
+* [Prithvijit Chattopadhyay](prithvijit3@gatech.edu)
+* [Kartik Sarangmath](kartiksarangmath@gatech.edu)
+* [Vivek Vijaykumar](vivekvjk@gatech.edu)
