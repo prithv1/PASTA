@@ -38,6 +38,7 @@ conda activate pasta
 conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 -c pytorch
 pip install jupyter
 ```
+4. Play around with PASTA [here](https://github.com/prithv1/PASTA/blob/main/pasta.ipynb)
 
 ## 💻 Setup
 
