@@ -44,7 +44,7 @@ We conduct experiments on semantic segmentation, object detection and object rec
 
 #### Semantic Segmentation
 
-Follow instructions under [Robustnet](RobustNet) to download datasets and install dependencies required to run experiments for semantic segmentation.
+Follow instructions under <a href="https://github.com/ksarangmath/PASTA_robustnet">RobustNet</a> to download datasets and install dependencies required to run experiments for semantic segmentation.
 
 #### Object Detection
 
@@ -84,3 +84,19 @@ pip install requirements.txt
 ```
 
 ## 📊 Experiments
+
+#### Semantic Segmentation
+
+3. Semantic segmentation experiments with PASTA can be run using following commands:
+```
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_base_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, Baseline + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1 ./scripts/PASTA/train_mobile_gtav_ibn_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, IBN-Net + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_mobile_gtav_isw_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / MobileNetV2, ISW + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_base_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, Baseline + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_ibn_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, IBN-Net + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r50os16_gtav_isw_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet50, ISW + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_base_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, Baseline + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_ibn_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, IBN-Net + PASTA
+<path_to_robustnet>$ CUDA_VISIBLE_DEVICES=0,1,2,3 ./scripts/PASTA/train_r101os8_gtav_isw_PASTA.sh # Train: GTAV, Test: BDD100K, Cityscapes, Synthia, Mapillary / ResNet101, ISW + PASTA
+
+```
