@@ -24,6 +24,20 @@ Prithvijit Chattopadhyay*, Kartik Sarangmath*, Vivek Vijaykumar, Judy Hoffman
 
 PASTA is a simple and effective frequency domain augmentation strategy to improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves perturbing the amplitude spectra of the synthetic images in the Fourier domain to generate augmented views. We find that synthetic images tend to be less diverse in their high-frequency components compared to real ones. Based on this observation, we design PASTA to perturb the amplitude spectrums in a structured manner such that high-frequency components are perturbed relatively more than the low-frequency ones (as outlined in the figure above). For the tasks of semantic segmentation (GTAV→Real), object detection (Sim10K→Real), and object recognition (VisDA-C Syn→Real), across a total of 5 syn-to-real shifts, we find that PASTA  either outperforms or is consistently competitive with more complex state-of-the-art methods while being complementary to other generalization approaches.
 
+To visualize PASTA augmented samples, follow the steps below:
+
+1. First download and setup [Anaconda](https://docs.anaconda.com/anaconda/install/linux/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+2. Create and activate a conda (anaconda / miniconda) environment
+```
+conda create -n pasta python=3.8
+conda activate pasta
+```
+3. Install dependencies
+```
+conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 -c pytorch
+pip install jupyter
+```
+
 ## 💻 Setup
 
 We conduct experiments on semantic segmentation, object detection and object recognition and build on top of the following repositories to do so - <a href="https://github.com/shachoi/RobustNet">RobustNet (SemSeg)</a>, <a href="https://github.com/open-mmlab/mmdetection">mmdetection (ObjDet)</a>, <a href="https://github.com/NVlabs/CSG">CSG (ObjRecog)</a>.
@@ -34,9 +48,11 @@ Follow instructions under [Robustnet](RobustNet) to download datasets and instal
 
 #### Object Detection
 
-Follow instructions under <a href="https://github.com/prithv1/mmdetection">mmdetection</a> install dependencies required to run experiments for object recognition.
+<!-- Follow instructions under <a href="https://github.com/prithv1/mmdetection">mmdetection</a> install dependencies required to run experiments for object recognition. -->
 
-Download the <a href="https://fcav.engin.umich.edu/projects/driving-in-the-matrix">Sim10k</a> dataset. Once downloaded run the following command to process annotations.
+Follow <a href="https://github.com/prithv1/mmdetection/blob/master/docs/en/get_started.md/#Installation">these instructions</a> to install dependencies and setup [mmdetection](https://github.com/prithv1/mmdetection).
+
+Download the <a href="https://fcav.engin.umich.edu/projects/driving-in-the-matrix">Sim10k</a> dataset and run the following command to process annotations.
 
 ```
 python dataset_utils/sim10k_voc2coco_format.py \
@@ -46,9 +62,25 @@ python dataset_utils/sim10k_voc2coco_format.py \
     --out-dir <path-to-store-processed-annotations>
 ```
 
+Download the <a href="https://www.cityscapes-dataset.com/downloads/">Cityscapes</a> dataset.
+
 
 #### Object Recognition
 
-Follow instructions under [CSG](CSG) to download datasets and install dependencies required to run experiments for object recognition.
+<!-- Follow instructions under [CSG](CSG) to download datasets and install dependencies required to run experiments for object recognition. -->
+
+Follow <a href="https://github.com/vivekvjk/PASTA_CSG/blob/c7a75d5c63db1a60b28e300457da74bb428073bd/README.md">these instructions</a> to download the VisDA-C dataset.
+
+To install required dependencies, follow the steps below:
+1. First download and setup [Anaconda](https://docs.anaconda.com/anaconda/install/linux/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+2. Create and activate a conda (anaconda / miniconda) environment
+```
+conda create -n csg python=3.8
+conda activate csg
+```
+3. Install dependencies
+```
+pip install requirements.txt
+```
 
 ## 📊 Experiments
