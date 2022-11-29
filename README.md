@@ -145,32 +145,32 @@ To run object detection experiments with PASTA, navigate to [mmdetection](https:
 1. ResNet-50 Backbone (trained on 4 GPUs)
 ```
 # Baseline Faster-RCNN
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r50_sim10k_detection_dg.py 4
 
 # Baseline Faster-RCNN (with Photometric Distortion)
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg_pd.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r50_sim10k_detection_dg_pd.py 4
 
 # Baseline Faster-RCNN (with PASTA)
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg_pasta.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r50_sim10k_detection_dg_pasta.py 4
 
 # Baseline Faster-RCNN (with PASTA + Photometric Distortion)
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_50_sim10k_detection_dg_pasta_pd.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r50_sim10k_detection_dg_pasta_pd.py 4
 ```
 
 2. ResNet-101 Backbone (trained on 4 GPUs)
 
 ```
 # Baseline Faster-RCNN
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r101_sim10k_detection_dg.py 4
 
 # Baseline Faster-RCNN (with Photometric Distortion)
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg_pd.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r101_sim10k_detection_dg_pd.py 4
 
 # Baseline Faster-RCNN (with PASTA)
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg_pasta.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r101_sim10k_detection_dg_pasta.py 4
 
 # Baseline Faster-RCNN (with PASTA + Photometric Distortion)
-./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_101_sim10k_detection_dg_pasta_pd.py 4
+./tools/dist_train.sh configs/pasta_dg/vanilla_faster_rcnn_r101_sim10k_detection_dg_pasta_pd.py 4
 ```
 
 All models are trained for 10k iterations. Once trained, obtain syn-to-real generalization performance at 10k iters from the respective log files.
@@ -203,6 +203,6 @@ To evaluate trained models, run the following commands.
 
 ## Contributors
 
-* [Prithvijit Chattopadhyay](prithvijit3@gatech.edu)
-* [Kartik Sarangmath](kartiksarangmath@gatech.edu)
-* [Vivek Vijaykumar](vivekvjk@gatech.edu)
+* [Prithvijit Chattopadhyay](https://github.com/prithv1)
+* [Kartik Sarangmath](https://github.com/ksarangmath)
+* [Vivek Vijaykumar](https://github.com/vivekvjk)
