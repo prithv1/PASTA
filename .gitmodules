@@ -4,3 +4,6 @@
 [submodule "PASTA_robustnet"]
 	path = PASTA_robustnet
 	url = https://github.com/ksarangmath/PASTA_robustnet.git
+[submodule "PASTA_mmdetection"]
+	path = PASTA_mmdetection
+	url = https://github.com/prithv1/mmdetection.git
