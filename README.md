@@ -140,7 +140,7 @@ All models are trained for 40k iterations. Once trained, obtain syn-to-real gene
 
 #### Object Detection
 
-To run object detection experiments with PASTA, navigate to [mmdetection](https://github.com/prithv1/mmdetection) and run the following commands.
+To run object detection experiments with PASTA, navigate to [PASTA_mmdetection](https://github.com/prithv1/mmdetection) and run the following commands.
 
 1. ResNet-50 Backbone (trained on 4 GPUs)
 ```
