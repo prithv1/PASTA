@@ -1,6 +1,6 @@
 # PASTA
 
-PyTorch code for our paper: <a href="https://arxiv.org/abs/2106.04531">PASTA: Proportional Amplitude Spectrum Augmentation for Synthetic to Real Domain Generalization</a>.
+PyTorch code for **"PASTA: Proportional Amplitude Spectrum Augmentation for Syn-to-Real Domain Generalization"**
 
 Prithvijit Chattopadhyay*, Kartik Sarangmath*, Vivek Vijaykumar, Judy Hoffman
 
