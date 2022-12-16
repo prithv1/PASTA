@@ -1,6 +1,6 @@
-# PASTA: Proportional Amplitude Spectrum Augmentation for Syn-to-Real Domain Generalization
+# PASTA: Proportional Amplitude Spectrum Training Augmentation for Syn-to-Real Domain Generalization
 
-PyTorch code for [PASTA: Proportional Amplitude Spectrum Augmentation for Syn-to-Real Domain Generalization](https://arxiv.org/abs/2212.00979)
+PyTorch code for [PASTA: Proportional Amplitude Spectrum Training Augmentation for Syn-to-Real Domain Generalization](https://arxiv.org/abs/2212.00979)
 
 Prithvijit Chattopadhyay*, Kartik Sarangmath*, Vivek Vijaykumar, Judy Hoffman
 
