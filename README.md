@@ -1,10 +1,14 @@
-# PASTA: Proportional Amplitude Spectrum Training Augmentation for Syn-to-Real Domain Generalization
+# PASTA
 
-PyTorch code for [PASTA: Proportional Amplitude Spectrum Training Augmentation for Syn-to-Real Domain Generalization](https://arxiv.org/abs/2212.00979)
+This repository provides code for our paper:
+ 
+[PASTA: Proportional Amplitude Spectrum Training Augmentation for Syn-to-Real Domain Generalization](https://arxiv.org/abs/2212.00979)
 
-Prithvijit Chattopadhyay*, Kartik Sarangmath*, Vivek Vijaykumar, Judy Hoffman
+[Prithvijit Chattopadhyay*](https://prithv1.xyz/), [Kartik Sarangmath*](https://www.semanticscholar.org/author/Kartik-Sarangmath/2046863986), [Vivek Vijaykumar](https://www.linkedin.com/in/vivek-vjk), [Judy Hoffman](https://faculty.cc.gatech.edu/~judy/)
 
 (*equal contribution)
+
+ICCV 2023
 
  ### Contents
 
@@ -204,3 +208,15 @@ To evaluate trained models, run the following commands.
 * [Prithvijit Chattopadhyay](https://github.com/prithv1)
 * [Kartik Sarangmath](https://github.com/ksarangmath)
 * [Vivek Vijaykumar](https://github.com/vivekvjk)
+
+## Cite
+
+Please cite our work if you find it useful:
+```
+@inproceedings{2023iccv_PASTA, 
+    author = {Chattopadhyay*, Prithvijit and Sarangmath*, Kartik and Vijaykumar, Vivek and Hoffman, Judy},
+    title = {PASTA: Proportional Amplitude Spectrum Training Augmentation for Syn-to-Real Domain Generalization},
+    year = 2023,
+    booktitle = {IEEE/CVF International Conference in Computer Vision (ICCV)}
+}
+```
